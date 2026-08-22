@@ -1,5 +1,5 @@
 /* =========================================
-   RESUME AI — BLUE / CYAN THEME
+   RESUME AI — CLEAN PAPER / SKY THEME
 ========================================= */
 
 * {
@@ -14,13 +14,13 @@ html {
 
 body {
     font-family: Arial, Helvetica, sans-serif;
-    background: #070b18;
-    color: #f5f7ff;
+    background: #f4f8fb;
+    color: #172033;
     min-height: 100vh;
     overflow-x: hidden;
 }
 
-/* BACKGROUND */
+/* SOFT BACKGROUND */
 
 body::before {
     content: "";
@@ -31,16 +31,23 @@ body::before {
 
     background:
         radial-gradient(
-            circle at 12% 15%,
-            rgba(61, 139, 255, 0.16),
-            transparent 28%
+            circle at 8% 12%,
+            rgba(91, 184, 255, 0.25),
+            transparent 25%
         ),
         radial-gradient(
-            circle at 88% 65%,
-            rgba(0, 229, 255, 0.10),
-            transparent 30%
+            circle at 90% 25%,
+            rgba(115, 235, 220, 0.20),
+            transparent 24%
+        ),
+        radial-gradient(
+            circle at 55% 90%,
+            rgba(160, 190, 255, 0.18),
+            transparent 28%
         );
 }
+
+/* VERY SUBTLE GRID */
 
 body::after {
     content: "";
@@ -51,16 +58,16 @@ body::after {
 
     background-image:
         linear-gradient(
-            rgba(255,255,255,0.018) 1px,
+            rgba(30, 80, 120, 0.025) 1px,
             transparent 1px
         ),
         linear-gradient(
             90deg,
-            rgba(255,255,255,0.018) 1px,
+            rgba(30, 80, 120, 0.025) 1px,
             transparent 1px
         );
 
-    background-size: 50px 50px;
+    background-size: 55px 55px;
 }
 
 
@@ -70,15 +77,16 @@ body::after {
 
 .navbar {
     width: 100%;
-    padding: 24px 7%;
+    padding: 22px 7%;
 
     display: flex;
     align-items: center;
     justify-content: space-between;
 
-    border-bottom: 1px solid rgba(255,255,255,0.08);
+    background: rgba(244, 248, 251, 0.82);
 
-    background: rgba(7,11,24,0.78);
+    border-bottom: 1px solid rgba(20, 50, 80, 0.08);
+
     backdrop-filter: blur(18px);
 
     position: sticky;
@@ -88,18 +96,20 @@ body::after {
 
 .logo {
     font-size: 20px;
-    font-weight: 800;
+    font-weight: 900;
     letter-spacing: 2px;
+    color: #172033;
 }
 
 .logo span {
-    color: #00e5ff;
+    color: #168fc4;
 }
 
 .nav-status {
-    font-size: 11px;
+    font-size: 10px;
     letter-spacing: 2px;
-    color: #00e5ff;
+    color: #168fc4;
+    font-weight: 700;
 }
 
 
@@ -124,18 +134,19 @@ main {
 
 .hero-label,
 .section-label {
-    color: #00e5ff;
+    color: #168fc4;
     font-size: 11px;
-    font-weight: 700;
+    font-weight: 800;
     letter-spacing: 3px;
-    margin-bottom: 24px;
+    margin-bottom: 22px;
 }
 
 .hero h1 {
     font-size: clamp(48px, 7vw, 92px);
-    line-height: 0.95;
+    line-height: 0.94;
     letter-spacing: -4px;
-    font-weight: 800;
+    font-weight: 900;
+    color: #172033;
 }
 
 .hero h1 span {
@@ -143,8 +154,8 @@ main {
 
     background: linear-gradient(
         90deg,
-        #4d8dff,
-        #00e5ff
+        #2477d4,
+        #12a9b8
     );
 
     -webkit-background-clip: text;
@@ -158,40 +169,42 @@ main {
     font-size: 18px;
     line-height: 1.7;
 
-    color: #a7afc4;
+    color: #657287;
 }
 
 
 /* =========================================
-   ANALYZER
+   INPUT AREA
 ========================================= */
 
 .analyzer {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 22px;
-
-    margin-top: 20px;
+    gap: 24px;
 }
 
 .input-card {
-    padding: 28px;
+    padding: 30px;
 
-    border: 1px solid rgba(100,160,255,0.13);
-    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.78);
 
-    background: rgba(255,255,255,0.035);
+    border: 1px solid rgba(40, 90, 130, 0.10);
+
+    border-radius: 24px;
+
+    box-shadow:
+        0 15px 45px rgba(50, 90, 120, 0.07);
 
     transition: 0.3s ease;
 }
 
 .input-card:hover {
-    border-color: rgba(0,229,255,0.38);
+    transform: translateY(-5px);
 
-    transform: translateY(-4px);
+    border-color: rgba(22, 143, 196, 0.25);
 
     box-shadow:
-        0 20px 60px rgba(0,0,0,0.22);
+        0 20px 55px rgba(50, 90, 120, 0.11);
 }
 
 .card-heading {
@@ -209,25 +222,26 @@ main {
 }
 
 .number {
-    color: #00e5ff;
+    color: #168fc4;
     font-size: 12px;
-    font-weight: 700;
+    font-weight: 800;
 }
 
 .card-heading h2 {
     font-size: 22px;
+    color: #172033;
 }
 
 .required {
     font-size: 9px;
     letter-spacing: 2px;
-    color: #6f7890;
+    color: #8995a7;
 }
 
 label {
     display: block;
 
-    color: #8d96aa;
+    color: #667286;
 
     font-size: 12px;
 
@@ -240,15 +254,15 @@ textarea {
 
     resize: vertical;
 
-    border: 1px solid rgba(255,255,255,0.08);
+    border: 1px solid #dce5ec;
 
-    border-radius: 14px;
+    border-radius: 16px;
 
     padding: 18px;
 
-    background: rgba(0,0,0,0.25);
+    background: #fbfdff;
 
-    color: #f5f7ff;
+    color: #172033;
 
     outline: none;
 
@@ -262,15 +276,16 @@ textarea {
 }
 
 textarea::placeholder {
-    color: #555e73;
+    color: #9ca7b6;
 }
 
 textarea:focus {
-    border-color: #00e5ff;
+    border-color: #42b8d5;
+
+    background: #ffffff;
 
     box-shadow:
-        0 0 0 3px rgba(0,229,255,0.07),
-        0 0 30px rgba(0,229,255,0.05);
+        0 0 0 4px rgba(66, 184, 213, 0.10);
 }
 
 .input-footer {
@@ -279,7 +294,7 @@ textarea:focus {
 
     margin-top: 12px;
 
-    color: #596278;
+    color: #8b96a6;
 
     font-size: 10px;
 }
@@ -304,22 +319,21 @@ textarea:focus {
 
     gap: 45px;
 
-    min-width: 270px;
+    min-width: 285px;
 
-    padding: 17px 20px 17px 25px;
+    padding: 17px 20px 17px 26px;
 
     border: none;
 
     border-radius: 50px;
 
-    background:
-        linear-gradient(
-            90deg,
-            #4d8dff,
-            #00e5ff
-        );
+    background: linear-gradient(
+        90deg,
+        #2477d4,
+        #12a9b8
+    );
 
-    color: #050914;
+    color: white;
 
     font-size: 11px;
 
@@ -328,6 +342,9 @@ textarea:focus {
     letter-spacing: 1.5px;
 
     cursor: pointer;
+
+    box-shadow:
+        0 12px 30px rgba(36, 119, 212, 0.20);
 
     transition: 0.3s ease;
 }
@@ -341,9 +358,9 @@ textarea:focus {
 
     border-radius: 50%;
 
-    background: #070b18;
+    background: white;
 
-    color: #00e5ff;
+    color: #2477d4;
 
     font-size: 18px;
 }
@@ -352,13 +369,13 @@ textarea:focus {
     transform: translateY(-4px);
 
     box-shadow:
-        0 15px 45px rgba(0,229,255,0.20);
+        0 18px 40px rgba(36, 119, 212, 0.25);
 }
 
 .action-section p {
     margin-top: 15px;
 
-    color: #596278;
+    color: #8995a5;
 
     font-size: 10px;
 
@@ -396,13 +413,15 @@ textarea:focus {
     line-height: 1;
 
     letter-spacing: -2px;
+
+    color: #172033;
 }
 
 .results-heading h2 span {
     background: linear-gradient(
         90deg,
-        #4d8dff,
-        #00e5ff
+        #2477d4,
+        #12a9b8
     );
 
     -webkit-background-clip: text;
@@ -412,7 +431,7 @@ textarea:focus {
 .results-heading p {
     max-width: 380px;
 
-    color: #7f899f;
+    color: #6d798c;
 
     line-height: 1.6;
 }
@@ -431,18 +450,21 @@ textarea:focus {
 
     padding: 40px;
 
-    border-radius: 24px;
+    border-radius: 26px;
 
     background:
         linear-gradient(
             135deg,
-            rgba(77,141,255,0.10),
-            rgba(0,229,255,0.035)
+            #ffffff,
+            #eef9fc
         );
 
-    border: 1px solid rgba(0,229,255,0.15);
+    border: 1px solid rgba(36, 119, 212, 0.12);
 
-    margin-bottom: 22px;
+    box-shadow:
+        0 18px 55px rgba(50, 90, 120, 0.08);
+
+    margin-bottom: 24px;
 }
 
 .score-circle {
@@ -461,18 +483,20 @@ textarea:focus {
 
     justify-content: center;
 
-    border: 2px solid #00e5ff;
+    border: 5px solid #55c9d9;
+
+    background: white;
 
     box-shadow:
-        0 0 55px rgba(0,229,255,0.13);
+        0 12px 35px rgba(50, 150, 180, 0.14);
 }
 
 .score-circle span {
     font-size: 42px;
 
-    font-weight: 800;
+    font-weight: 900;
 
-    color: #00e5ff;
+    color: #2477d4;
 }
 
 .score-circle small {
@@ -482,25 +506,29 @@ textarea:focus {
 
     letter-spacing: 2px;
 
-    color: #717b91;
+    color: #7d899b;
 }
 
 .result-label {
-    color: #00e5ff;
+    color: #168fc4;
 
     font-size: 10px;
 
     letter-spacing: 2px;
+
+    font-weight: 800;
 }
 
 .score-info h3 {
     margin: 12px 0;
 
     font-size: 30px;
+
+    color: #172033;
 }
 
 .score-info p {
-    color: #808a9e;
+    color: #6d798c;
 
     line-height: 1.6;
 }
@@ -515,27 +543,30 @@ textarea:focus {
 
     grid-template-columns: 1fr 1fr;
 
-    gap: 22px;
+    gap: 24px;
 }
 
 .result-card {
-    padding: 27px;
+    padding: 28px;
 
-    border-radius: 20px;
+    border-radius: 22px;
 
-    background: rgba(255,255,255,0.035);
+    background: rgba(255,255,255,0.80);
 
-    border: 1px solid rgba(255,255,255,0.08);
+    border: 1px solid rgba(40,90,130,0.09);
 
     min-height: 190px;
+
+    box-shadow:
+        0 12px 35px rgba(50,90,120,0.055);
 
     transition: 0.3s ease;
 }
 
 .result-card:hover {
-    border-color: rgba(0,229,255,0.22);
+    transform: translateY(-4px);
 
-    transform: translateY(-3px);
+    border-color: rgba(22,143,196,0.20);
 }
 
 .result-card.wide {
@@ -553,13 +584,17 @@ textarea:focus {
 }
 
 .result-card-top span {
-    color: #00e5ff;
+    color: #168fc4;
 
     font-size: 11px;
+
+    font-weight: 800;
 }
 
 .result-card-top h3 {
     font-size: 18px;
+
+    color: #172033;
 }
 
 .skill-list {
@@ -577,19 +612,21 @@ textarea:focus {
 
     border-radius: 30px;
 
-    background: rgba(0,229,255,0.07);
+    background: #e9f8fb;
 
-    border: 1px solid rgba(0,229,255,0.14);
+    border: 1px solid #cbeef3;
 
-    color: #a9eefa;
+    color: #197f99;
 
     font-size: 11px;
+
+    font-weight: 600;
 }
 
 #suggestions {
     padding-left: 18px;
 
-    color: #a5adbd;
+    color: #667286;
 }
 
 #suggestions li {
@@ -612,7 +649,7 @@ footer {
 
     padding: 30px 0;
 
-    border-top: 1px solid rgba(255,255,255,0.08);
+    border-top: 1px solid rgba(30,70,100,0.09);
 
     display: flex;
 
@@ -620,7 +657,7 @@ footer {
 
     justify-content: space-between;
 
-    color: #596278;
+    color: #8995a5;
 
     font-size: 10px;
 
@@ -628,7 +665,7 @@ footer {
 }
 
 footer div {
-    color: #00e5ff;
+    color: #168fc4;
 
     font-weight: 800;
 }
