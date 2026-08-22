@@ -1,1 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>AI Resume Analyzer</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+
+    <nav class="navbar">
+
+        <div class="logo">
+            RESUM<span>E</span>AI
+        </div>
+
+        <div class="nav-status">
+            ● AI ANALYZER
+        </div>
+
+    </nav>
+
+
+    <!-- HERO -->
+
+    <main>
+
+        <section class="hero">
+
+            <div class="hero-label">
+                01 / RESUME INTELLIGENCE
+            </div>
+
+            <h1>
+                Make your resume
+                <span>work harder.</span>
+            </h1>
+
+            <p class="hero-text">
+                Compare your resume with a job description,
+                discover missing skills and understand how
+                well your profile matches the role.
+            </p>
+
+        </section>
+
+
+        <!-- ANALYZER -->
+
+        <section class="analyzer">
+
+            <div class="input-card">
+
+                <div class="card-heading">
+
+                    <div>
+                        <span class="number">01</span>
+                        <h2>Your Resume</h2>
+                    </div>
+
+                    <span class="required">
+                        REQUIRED
+                    </span>
+
+                </div>
+
+
+                <label for="resumeText">
+                    Paste your resume text
+                </label>
+
+                <textarea
+                    id="resumeText"
+                    placeholder="Paste your resume content here..."
+                ></textarea>
+
+
+                <div class="input-footer">
+
+                    <span>
+                        Text analysis
+                    </span>
+
+                    <span id="resumeCount">
+                        0 characters
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="input-card">
+
+                <div class="card-heading">
+
+                    <div>
+                        <span class="number">02</span>
+                        <h2>Job Description</h2>
+                    </div>
+
+                    <span class="required">
+                        REQUIRED
+                    </span>
+
+                </div>
+
+
+                <label for="jobText">
+                    Paste the job description
+                </label>
+
+                <textarea
+                    id="jobText"
+                    placeholder="Paste the job description here..."
+                ></textarea>
+
+
+                <div class="input-footer">
+
+                    <span>
+                        Keyword analysis
+                    </span>
+
+                    <span id="jobCount">
+                        0 characters
+                    </span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ANALYZE BUTTON -->
+
+        <section class="action-section">
+
+            <button id="analyzeBtn">
+
+                <span>
+                    ANALYZE MY RESUME
+                </span>
+
+                <strong>
+                    →
+                </strong>
+
+            </button>
+
+            <p>
+                Compare skills · Keywords · Job compatibility
+            </p>
+
+        </section>
+
+
+
+        <!-- RESULTS -->
+
+        <section
+            id="results"
+            class="results hidden"
+        >
+
+            <div class="section-label">
+                03 / ANALYSIS
+            </div>
+
+
+            <div class="results-heading">
+
+                <h2>
+                    Your resume
+                    <span>score.</span>
+                </h2>
+
+                <p>
+                    Here's how closely your profile matches
+                    the selected job description.
+                </p>
+
+            </div>
+
+
+
+            <!-- SCORE -->
+
+            <div class="score-card">
+
+                <div class="score-circle">
+
+                    <span id="score">
+                        0%
+                    </span>
+
+                    <small>
+                        MATCH
+                    </small>
+
+                </div>
+
+
+                <div class="score-info">
+
+                    <span class="result-label">
+                        JOB COMPATIBILITY
+                    </span>
+
+                    <h3 id="scoreMessage">
+                        Analysis complete
+                    </h3>
+
+                    <p id="scoreDescription">
+                        Your results will appear here.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- RESULT GRID -->
+
+            <div class="result-grid">
+
+
+                <!-- MATCHING SKILLS -->
+
+                <div class="result-card">
+
+                    <div class="result-card-top">
+
+                        <span>
+                            01
+                        </span>
+
+                        <h3>
+                            Matching Skills
+                        </h3>
+
+                    </div>
+
+                    <div
+                        id="matchingSkills"
+                        class="skill-list"
+                    >
+                        <span>
+                            No analysis yet
+                        </span>
+                    </div>
+
+                </div>
+
+
+
+                <!-- MISSING SKILLS -->
+
+                <div class="result-card">
+
+                    <div class="result-card-top">
+
+                        <span>
+                            02
+                        </span>
+
+                        <h3>
+                            Missing Skills
+                        </h3>
+
+                    </div>
+
+                    <div
+                        id="missingSkills"
+                        class="skill-list"
+                    >
+                        <span>
+                            No analysis yet
+                        </span>
+                    </div>
+
+                </div>
+
+
+
+                <!-- KEYWORDS -->
+
+                <div class="result-card wide">
+
+                    <div class="result-card-top">
+
+                        <span>
+                            03
+                        </span>
+
+                        <h3>
+                            Important Keywords
+                        </h3>
+
+                    </div>
+
+                    <div
+                        id="keywords"
+                        class="skill-list"
+                    >
+                        <span>
+                            No analysis yet
+                        </span>
+                    </div>
+
+                </div>
+
+
+
+                <!-- SUGGESTIONS -->
+
+                <div class="result-card wide">
+
+                    <div class="result-card-top">
+
+                        <span>
+                            04
+                        </span>
+
+                        <h3>
+                            Improvement Suggestions
+                        </h3>
+
+                    </div>
+
+                    <ul id="suggestions">
+
+                        <li>
+                            Run the analysis to receive
+                            personalized suggestions.
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <div>
+            RESUMEAI
+        </div>
+
+        <span>
+            Built with HTML · CSS · JavaScript
+        </span>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
